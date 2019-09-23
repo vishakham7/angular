@@ -1,0 +1,56 @@
+<div class="container">
+    <div class="row">
+        <div *ngFor="let product of products">
+            <div class="col-12 col-sm-12 col-md-3 col-xl-3 product-list">
+                <a [title]="product.name + ' details'" [routerLink]="['/product-details', product.id]">
+                
+                    <div *ngIf="product.images!=''">
+                        <div *ngFor="let image of product.images">
+                        
+                            <img src="{{ image.image }}" alt="Image" class="image"/>
+                        </div>
+                    </div>
+
+                    <div *ngIf="product.images==''">
+
+                        <img src="https://snovelweb.progfeel.co.in/images/default.jpg" class="image"/>
+                    </div>
+                    </a>
+                    <div class="name" >
+                        <h6> 
+                            {{ product.name }}
+                            
+                        </h6>
+                    </div>
+                </div>
+    <!-- author -->
+    <div class="row line-space">
+        <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Author
+                </button>
+                
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <div *ngFor="let author of product.authors">
+                        <a class="dropdown-item dropdown" href="#">{{ author.name }}</a>
+                    </div>
+                </div>
+            </div>
+
+        <!-- category -->
+        <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Category
+            </button>
+            
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <div *ngFor="let cat of product.category">
+                    <a class="dropdown-item dropdown" href="#">{{ cat.name }}</a>
+                </div>
+            </div>
+        </div>
+        <a [routerLink]="['/checkout']">
+        <button type="button" class="btn btn-primary">Add to cart</button></a>
+    </div>
+    </div>
+</div>

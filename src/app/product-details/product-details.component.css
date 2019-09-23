@@ -1,0 +1,19 @@
+.container{
+    margin-top: 50px;
+}
+
+.product-desc{
+    color: #484848;
+    font-size: 14px;
+    font-family: 'Roboto', sans-serif;
+}
+
+p {
+    color: #484848;
+    font-size: 14px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.desc{
+    margin-left: 420px;
+}

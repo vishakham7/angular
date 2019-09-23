@@ -1,0 +1,73 @@
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1050;
+    display: none;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    outline: 0;
+}
+
+.form-control {
+    display: block;
+    width: 100%;
+    height: calc(1.5em + .75rem + 2px);
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+.form-control::placeholder {
+    color: #6c757d;
+    opacity: 1;
+}
+.checkbox-label{
+    margin-left:17px;
+}
+
+.checkbox::after{
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    transform: rotate(45deg);
+}
+
+.profile-image{
+    margin-left: 100px;
+    margin-bottom: 10px;
+    width: 100px;
+    height: 100px;
+}
+
+.profile-btn{
+    margin-left: 90px;
+    width: 150px;
+    border-radius: 20px;
+}
+
+label{
+    color: black;
+}
+
+.plan{
+    width: 250px;
+    height: 10px;
+    margin-left: 5px;
+    margin-top: 2px;
+}
+
+.modal-title{
+    margin-left: 10px;
+}

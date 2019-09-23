@@ -1,0 +1,21 @@
+<div class="container product-details">
+  <div *ngIf="products">
+    <div *ngFor="let product of products.product_details">
+      <div class="row">
+        <div class="col-md-4">
+          <div *ngIf="product.images">
+            <div *ngFor="let image of product.images">
+              <img src="{{ image.image }}">
+            </div>
+          </div>
+        </div>
+        <!-- <div class="desc"> -->
+        <div class="col-md-6">
+          <h4>Description</h4>
+            <span class="product-desc" [innerHTML]="product.description"></span>
+        </div>
+      <!-- </div> -->
+    </div>
+    </div>    
+  </div>
+</div>

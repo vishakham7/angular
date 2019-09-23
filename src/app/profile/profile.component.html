@@ -1,0 +1,104 @@
+<div id="myModal" class="modal fade " role="dialog">
+    <div class="modal-dialog modal-lg">
+        
+           Modal content
+        <div class="modal-content">
+            <div class="container">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                
+                <h4 class="modal-title">My Profile</h4>
+                 
+                <!-- <hr class="plan"> -->
+            <div class="modal-body">
+                <form [formGroup] = "ProfileForm" (ngSubmit)="onSubmit()">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div *ngIf="profile_details.data.my_subscription!=''">
+                            <div *ngFor="let subscription of profile_details.data.my_subscription">
+                                <label>Plan Name:</label>
+                                <hr class="plan">
+                                <h4>{{ subscription.name }}</h4>
+                                <b>Start Date: </b>{{ subscription.start_date }} | 
+                                <b>End Date: </b>{{ subscription.end_date }}
+                            </div>
+                        </div>
+                        <div *ngIf="profile_details.data.my_subscription==''">
+                            <b>No plan is Activated</b>
+                        </div>
+                        
+                    </div>
+                    <div class="col-md-3">
+                        <div *ngIf="profile_details.data.my_profile.profile_image!=''">
+                            <img src="{{ profile_details.data.my_profile.profile_image }}" class="rounded-circle profile-image">
+                        </div>
+                        <div *ngIf="profile_details.data.my_profile.profile_image==''">
+                            <img src="https://stagingweb.snovel.in/images/user_circle.png" class="img-thumbnail rounded-circle">
+                        </div>
+                        <button type="button" class="btn btn-primary btn-sm profile-btn">Upload Image</button>
+                    </div>
+                </div>
+                <div class="gap">
+                    <hr>
+                </div>
+                <div class="row">
+                    
+                    <div class="col-md-6">
+                <!-- <div *ngFor="let detail of profile_details"> -->
+                        <div class="form-group">
+                            <label for="usr">FirstName:</label>
+                            <input type="text" class="form-control" id="usr" name="first_name"
+                            value="{{ profile_details.data.my_profile.first_name }}" placeholder="First Name">
+                        </div>
+                        <div class="form-group">
+                            <label for="usr">Mobile</label>
+                            <input type="text" class="form-control" id="usr" name="mobile"
+                            value="{{ profile_details.data.my_profile.mobile }}" placeholder="Phone No.">
+                        </div>
+                    </div>
+                    <div class="col-md-6" >
+                        <div class="form-group">
+                            <label for="pwd">LastName:</label>
+                            <input type="text" class="form-control" id="pwd" name="last_name"
+                            value="{{ profile_details.data.my_profile.last_name }}" placeholder="Last Name">
+                        </div> 
+
+                        <div class="form-group">
+                            <label for="pwd">Email:</label>
+                            <input type="text" class="form-control" id="pwd" name="email" value="{{ profile_details.data.my_profile.email }}">
+                        </div> 
+                    </div>
+                </div>
+            
+                <div class="col-md-6" >
+                    <div *ngIf="profile_details.data.my_profile.newsletter_subscribed==true">
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" id="customCheck1" name="checkbox">
+                            <label class="custom-control-label" for="customCheck1">Subscribe to our Newsletter</label>
+                        </div>
+                    </div>
+
+                    <div *ngIf="profile_details.data.my_profile.newsletter_subscribed==false">
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" id="customCheck1">
+                            <label class="custom-control-label" for="customCheck1">Subscribe to our Newsletter</label>
+                        </div>
+                    </div>
+                </div>
+            <!-- </div> -->
+            <br>
+    
+            <div class="modal-footer">
+                <button type="submit" class="btn btn-primary">Save</button>
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                
+            </div>
+        </form>
+        </div>
+            
+    </div>
+
+</div>
+</div>
+
