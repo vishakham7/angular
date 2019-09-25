@@ -23,19 +23,22 @@
                         </h6>
                     </div>
                 </div>
-    <!-- author -->
+    
     <div class="row line-space">
+        <!-- author -->    
         <div class="dropdown">
                 <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Author
                 </button>
-                
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    
                     <div *ngFor="let author of product.authors">
-                        <a class="dropdown-item dropdown" href="#">{{ author.name }}</a>
+                        
+                            <a class="dropdown-item dropdown" href="#">{{ author.name }}</a>
+                        </div>
                     </div>
                 </div>
-            </div>
+            
 
         <!-- category -->
         <div class="dropdown">
@@ -53,4 +56,5 @@
         <button type="button" class="btn btn-primary">Add to cart</button></a>
     </div>
     </div>
+</div>
 </div>

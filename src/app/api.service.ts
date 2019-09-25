@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 
 let LoginToken = new HttpHeaders({
   'Content-Type': 'application/json',
@@ -12,8 +12,10 @@ let ProductToken = new HttpHeaders({
   'guest-product-token':'d06aa4e4-44bb-11e9-b210-d663bd873d93',
 });
 
+let cartBody = new HttpParams();
+
 let AuthToken = new HttpHeaders({
-  'Accept': '*/*',
+  // 'Accept': '*/*',
   'Authorization': 'Token e1a9cbff8b3bd8a995742d80be87934c1c1a5ff2'
   });
 
@@ -52,8 +54,8 @@ export class ApiService{
       return this.httpClient.get("https://staging.snovel.in/api/product-details/"+id+"/", ProductTokenOptions);
     }
 
-    public getCart({}){
-      return this.httpClient.post("https://staging.snovel.in/api/cart/",AuthTokenOptions);
+    public getCart(cartBody){
+      return this.httpClient.post("https://staging.snovel.in/api/cart/", cartBody, AuthTokenOptions);
     }
 
     public getProfile(){

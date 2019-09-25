@@ -10,26 +10,27 @@ import { ApiService } from '../api.service';
 export class CheckoutCartComponent implements OnInit {
   carts;
   items = [];
+  cartbody = {
+    "email": "",
+    "discount_amount" : "0.00",
+    "discount_amount_inr" : "0.00",
+    "gift_cart":true,
+    "cart_lines" : [
+        {
+            "variant": 2,
+            "quantity": 1,
+            "data": {}
+        }
+    ]
+}
   
-  constructor(private apiServie: ApiService) { }
+  constructor(private apiService: ApiService) { }
 
-  ngOnInit() {
-    this.apiServie.getCart({
-      "email": "",
-      "discount_amount" : "0.00",
-      "discount_amount_inr" : "0.00",
-      "gift_cart":true,
-      "cart_lines" : [
-          {
-              "variant": 2,
-              "quantity": 1,
-              "data": {}
-          }
-      ]
-  }).subscribe((data)=>{
-      this.carts = data;
+  ngOnInit(){
+    this.apiService.getCart(this.cartbody).subscribe((data)=>{
+      console.log("------------------------------->")
+      console.log(data);
     });
-
   }
 
 }
